@@ -6,6 +6,48 @@
   height: 40vmin;
   pointer-events: none;
 }
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top,#ff9956,#ffce59);
+ 
+}
+.b1{
+  background: blue;
+  height: 40px;
+  width: 60px;
+  margin-right: 10px;
+}
+.b2{
+  background: blue;
+  height: 40px;
+  width: 60px;
+  position: absolute;
+	left: 15%;
+	top:40%;
+}
+.b3{
+  background: blue;
+  height: 40px;
+  width: 60px;
+  position: absolute;
+	left: 80%;
+	top:40%;
+}
+.b4{
+  background: blue;
+  height: 40px;
+  width: 60px;
+  position: absolute;
+	left: 35%;
+	top:35%;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
