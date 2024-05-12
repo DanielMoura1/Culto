@@ -242,6 +242,47 @@ function Selecao() {
                     </div>
 
                 </div>
+                <div className='caixaSel'onClick={()=>escolher('renan','samuca.jpeg',ab[2])} >
+                    <img className='image' src="samuca.jpeg"></img>
+                    <div>
+                        <p>
+                            Samuca
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('renan','samuel.jpeg',ab[2])} >
+                    <img className='image' src="samuel.jpeg"></img>
+                    <div>
+                        <p>
+                            Samuel T
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('renan','elza.jpeg',ab[2])} >
+                    <img className='image' src="elza.jpeg"></img>
+                    <div>
+                        <p>
+                            Elza
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('renan','victor.jpeg',ab[2])} >
+                    <img className='image' src="victor.jpeg"></img>
+                    <div>
+                        <p>
+                            Victor Hugo
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('renan','fortnite.jpeg',ab[2])} >
+                    <img className='image' src="fortnite.jpeg"></img>
+                    <div>
+                        <p>
+                        fortnite
+                        </p>
+                    </div>
+                </div>
+               
 
             </div>
             <div className={jogo ? 'none': 'game'}>
