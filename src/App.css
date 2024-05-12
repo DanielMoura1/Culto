@@ -17,6 +17,158 @@
   background-image: linear-gradient(to top,#ff9956,#ffce59);
  
 }
+.selecao{
+  background: silver;
+  height: 400px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.game{
+  background: white;
+  height: 800px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.placar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+
+}
+.vida{
+  color: green;
+  background-color: silver;
+
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.inimigo{
+  color: rgb(236, 75, 12);
+  background-color: silver;
+
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  
+}
+.inimigo2{
+  color: rgb(236, 75, 12);
+  background-color: silver;
+
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 5px solid rgb(82, 162, 182);
+  
+}
+.kamyllyEspecial{
+  color: rgb(236, 75, 12);
+  background-color: silver;
+
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 5px solid rgb(0, 0, 0);
+
+}
+.barra {
+  width: 120px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.progresso {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+.monitor{
+  background-color: gray;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bot{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 50px;
+  width: 250px;
+  background-color: red;
+}
+.bot2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 90px;
+  width: 250px;
+  background-color: red;
+  font-size: 15px;
+}
+.botao{
+  height: 30px;
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 10px;
+
+  
+}
+.especial{
+  height: 30px;
+  width: 80px;
+  margin-right: 10px;
+  background-color: blue;
+  border-radius: 10px;
+}
+.none{
+  display: none;
+}
+.caixaSel{
+  background: rgb(64, 217, 228);
+  height: 300px;
+  width: 250px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.image{
+  background: rgb(45, 233, 7);
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+}
 .b1{
   background: blue;
   height: 40px;
