@@ -20,7 +20,7 @@ function Selecao() {
     const [imgg,setImgg] =useState('')
     const monitor=['recebeu :'+recebido+' de prejuízo. teste1','recebeu:'+recebido+'de prejuízo. teste2','recebeu:'+recebido+'de prejuízo. teste3']
     const [texto,setTexto] =useState('')
-    const ab=['Paralisa o adversário por 6 rodadas','Envenena o adversário por 3 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 10 rodadas recebendo apenas a metadedo prejuizo']
+    const ab=['Paralisa o adversário por 6 rodadas','Envenena o adversário por 3 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 10 rodadas recebendo apenas a metade do prejuizo']
   
     function escolher(nome,img,tex){
        
