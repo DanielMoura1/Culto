@@ -242,7 +242,7 @@ function Selecao() {
                     </div>
 
                 </div>
-                <div className='caixaSel'onClick={()=>escolher('renan','samuca.jpeg',ab[2])} >
+                <div className='caixaSel'onClick={()=>escolher('luciano','samuca.jpeg',ab[0])} >
                     <img className='image' src="samuca.jpeg"></img>
                     <div>
                         <p>
@@ -258,7 +258,7 @@ function Selecao() {
                         </p>
                     </div>
                 </div>
-                <div className='caixaSel'onClick={()=>escolher('renan','elza.jpeg',ab[2])} >
+                <div className='caixaSel'onClick={()=>escolher('karol','elza.jpeg',ab[1])} >
                     <img className='image' src="elza.jpeg"></img>
                     <div>
                         <p>
@@ -266,7 +266,7 @@ function Selecao() {
                         </p>
                     </div>
                 </div>
-                <div className='caixaSel'onClick={()=>escolher('renan','victor.jpeg',ab[2])} >
+                <div className='caixaSel'onClick={()=>escolher('karol','victor.jpeg',ab[1])} >
                     <img className='image' src="victor.jpeg"></img>
                     <div>
                         <p>
@@ -274,7 +274,7 @@ function Selecao() {
                         </p>
                     </div>
                 </div>
-                <div className='caixaSel'onClick={()=>escolher('renan','fortnite.jpeg',ab[2])} >
+                <div className='caixaSel'onClick={()=>escolher('kamylly','fortnite.jpeg',ab[3])} >
                     <img className='image' src="fortnite.jpeg"></img>
                     <div>
                         <p>
