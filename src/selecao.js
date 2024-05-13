@@ -330,6 +330,14 @@ function Selecao() {
                         </p>
                     </div>
                 </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','calebe.jpeg',ab[0])} >
+                    <img className='image' src="calebe.jpeg"></img>
+                    <div>
+                        <p>
+                            Calebe
+                        </p>
+                    </div>
+                </div>
                
 
             </div>
