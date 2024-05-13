@@ -278,7 +278,7 @@ function Selecao() {
                     <img className='image' src="fortnite.jpeg"></img>
                     <div>
                         <p>
-                        fortnite
+                            Vectra
                         </p>
                     </div>
                 </div>
