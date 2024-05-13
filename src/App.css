@@ -20,15 +20,15 @@
 .selecao{
   background: silver;
   height: 60%;
-  width: 90%;
+  width: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   overflow-y: auto; /* Habilita a rolagem horizontal quando necessário */
   white-space: nowrap;
-  padding-left: 50px;
-  padding-right:50px ;
+  padding-left: 480px;
+  padding-right:20px ;
 }
 .game{
   background: white;
@@ -226,8 +226,8 @@
 @media only screen and (max-width: 600px) {
   .selecao{
     background: silver;
-    max-height: 100%;
-    max-width: 80%;
+    max-height: 80%;
+    max-width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,7 +235,7 @@
     overflow-y: auto; /* Habilita a rolagem horizontal quando necessário */
     white-space: nowrap;
     padding-left: 0px;
-    padding-top: 950px;
+    padding-top: 1650px;
     
     margin-right: 0px;
  

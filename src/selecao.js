@@ -215,8 +215,8 @@ function Selecao() {
                     </div>
 
                 </div>
-                <div className='caixaSel'onClick={()=>escolher('karol','karol.jpeg',ab[1])} >
-                    <img className='image' src="karol.jpeg"></img>
+                <div className='caixaSel'onClick={()=>escolher('karol','karol2.jpeg',ab[1])} >
+                    <img className='image' src="karol2.jpeg"></img>
                     <div>
                         <p>
                             Karoll
@@ -295,6 +295,38 @@ function Selecao() {
                     <div>
                         <p>
                             Julia
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','livia.jpeg',ab[0])} >
+                    <img className='image' src="livia.jpeg"></img>
+                    <div>
+                        <p>
+                            Livia
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','sara.jpeg',ab[0])} >
+                    <img className='image' src="sara.jpeg"></img>
+                    <div>
+                        <p>
+                            Sara
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','Nicolas.jpeg',ab[0])} >
+                    <img className='image' src="Nicolas.jpeg"></img>
+                    <div>
+                        <p>
+                            Nicolas
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','caique.jpeg',ab[0])} >
+                    <img className='image' src="caique.jpeg"></img>
+                    <div>
+                        <p>
+                            Caique
                         </p>
                     </div>
                 </div>
