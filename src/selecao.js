@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 function Selecao() {
-    const navigate = useNavigate();
     
+    const navigate = useNavigate();
+    const adver =['luciano.jpeg','karol.jpeg','rr.jpeg','kamylly.jpeg','samuca.jpeg','samuel.jpeg']
     const [isMouseNear, setIsMouseNear] = useState(false);
     const [nome,setNome] =useState('')
+    const [rad,setRad]=useState(0)
     const [recebido,setRecebido] =useState(0)
     const [dado,setDado] =useState(0)
     const [vida,setVida] =useState(1000)
+    const [fase,setFase] =useState(0)
     const [vidaInimigo,setVidaInimigo] =useState(1000)
     const [jogo,setJogo] =useState(true)
     const [cor,setCor] =useState('inimigo2')
@@ -18,6 +21,8 @@ function Selecao() {
     const [contV,setContV] =useState(0)
     const [cont,setCont] =useState(0)
     const [imgg,setImgg] =useState('')
+    const [moeda,setMoeda] =useState('')
+    const [animGolpe,setAnimGolpe] =useState('')
     const monitor=['recebeu :'+recebido+' de prejuízo. teste1','recebeu:'+recebido+'de prejuízo. teste2','recebeu:'+recebido+'de prejuízo. teste3']
     const [texto,setTexto] =useState('')
     const ab=['Paralisa o adversário por 3 rodadas','Envenena o adversário por 3 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 10 rodadas recebendo apenas a metade do prejuizo']
@@ -35,13 +40,24 @@ function Selecao() {
 
     }
     function atacar(){
+        if(rad>0){
+            setRad(rad-1)
+        }
         if(vida==0){
             alert('derrota')
             window.location.reload()
         }else if(vidaInimigo==0){
-            alert('vitoria')
-            window.location.reload()
+            if(fase ==5){
+                alert('vitoria')
+                window.location.reload()
+            }else{
+                setVidaInimigo(1000)
+                setFase(fase+1)
+                return
+            }
+            
         }
+        setAnimGolpe('line')
 
         if(contG==0){
             setCongelado(false)
@@ -82,15 +98,28 @@ function Selecao() {
             setContG(contG-1)
             
         }
+        setTimeout(function() {
+            setAnimGolpe('')
+          }, 550);
         
     }
     function curar(){
+        if(rad>0){
+            setRad(rad-1)
+        }
         if(vida==0){
             alert('derrota')
             window.location.reload()
         }else if(vidaInimigo==0){
-            alert('vitoria')
-            window.location.reload()
+            if(fase ==5){
+                alert('vitoria')
+                window.location.reload()
+            }else{
+                setVidaInimigo(1000)
+                setFase(fase+1)
+                return
+            }
+            
         }
         if(contG==0){
             setCongelado(false) 
@@ -148,22 +177,40 @@ function Selecao() {
 
     }
     function especial(nome){
+        if(rad>0){
+            setRad(rad-1)
+        }
         if(vida==0){
             alert('derrota')
             window.location.reload()
         }else if(vidaInimigo==0){
-            alert('vitoria')
-            window.location.reload()
+            if(fase ==5){
+                alert('vitoria')
+                window.location.reload()
+            }else{
+                setVidaInimigo(1000)
+                setFase(fase+1)
+                return
+            }
+            
         }
         if(nome=='luciano'){
-            setCongelado(true)
+            setCor('inimigo2')
+            setAnimGolpe('linel')
             setContG(6)
             setDado(0)
             setRecebido(0)
+            setTimeout(function() {
+                setAnimGolpe('')
+                setCongelado(true)
+            }, 550);
+            
+            
 
         }else if(nome=='karol'){
+            setAnimGolpe('linek')
             setContV(3)
-            setEnvenenamento(true)
+            
             const novaVida = vidaInimigo - 30;
             setVidaInimigo(Math.max(0, novaVida))
             setDado(30)
@@ -171,7 +218,14 @@ function Selecao() {
             const golpes =[20,30,35,45,50,60,70,85,90,105]
             setVida(Math.max(0,vida-golpes[numeroAleatorioEntre0e9] ))
             setRecebido(golpes[numeroAleatorioEntre0e9]) 
+            setTimeout(function() {
+                setAnimGolpe('')
+                setEnvenenamento(true)
+              }, 550);
+
+            
         }else if(nome=='kamylly'){
+           
             setGen(true)
             setCont(10)
             const numeroAleatorioEntre0e9 = Math.floor(Math.random() * 10) 
@@ -179,8 +233,9 @@ function Selecao() {
             setVida(Math.max(0,vida-golpes[numeroAleatorioEntre0e9] ))
             setRecebido(golpes[numeroAleatorioEntre0e9]) 
             setDado(0)
-
+           
         }else{
+            setMoeda('coin')
             const sorte = Math.floor(Math.random() * 2)
             const op=['vc','ele']
             if(op[sorte]=='vc'){
@@ -192,8 +247,29 @@ function Selecao() {
                 setDado(0)
                 setRecebido(0)
             }
+            setTimeout(function() {
+                setMoeda('')
+              }, 1000);
         }
 
+    }
+    function sorte(){
+        let sorte = Math.floor(Math.random() * 4)
+     
+        const atks=['luciano','karol','rr','kamylly']
+        alert(sorte)
+        if(atks[sorte]==nome){
+            if(nome=='luciano'){
+                sorte=sorte+1         
+            }else{
+                sorte=sorte-1
+            }
+        }
+        setRad(10)
+        if(atks[sorte]=='kamylly'){
+            setCor('kamyllyEspecial')
+        }
+        especial(atks[sorte])
     }
        // Função para desativar quando o mouse sair da proximidade
     
@@ -206,8 +282,8 @@ function Selecao() {
         <div className="body">
            
             <div className={jogo ? 'selecao': 'none'}>
-                <div className='caixaSel' onClick={()=>escolher('luciano','luciano.jpeg',ab[0])}>
-                    <img className='image' src="luciano.jpeg"></img>
+                <div className='caixaSel' onClick={()=>escolher('luciano','luciano2.jpeg',ab[0])}>
+                    <img className='image' src="luciano2.jpeg"></img>
                     <div>
                         <p>
                             Luciano
@@ -338,6 +414,24 @@ function Selecao() {
                         </p>
                     </div>
                 </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','gelado.jpeg',ab[0])} >
+                    <img className='image' src="gelado.jpeg"></img>
+                    <div>
+                        <p>
+                            Gelado
+                        </p>
+                    </div>
+                </div>
+                <div className='caixaSel'onClick={()=>escolher('luciano','eduarda.jpeg',ab[0])} >
+                    <img className='image' src="eduarda.jpeg"></img>
+                    <div>
+                        <p>
+                            Eduarda
+                        </p>
+                    </div>
+                </div>
+
+
                
 
             </div>
@@ -352,30 +446,38 @@ function Selecao() {
                         </div>
                         Prejuízo : {recebido}
                     </div>
-                   
+                    <div class={animGolpe}></div>
 
                     <div className={gen || congelado ? cor:'inimigo'}  style={ { border: envenenamento?'4px solid purple':'' }} >
-                        <div className='image'></div>
+                        <img className='image' src={adver[fase]}></img>
                         INIMIGO: {vidaInimigo}
                         <div className="barra">
-                            <div className="progresso" style={{ width: largura2 }}></div>
+                            <div className="progresso2" style={{ width: largura2 }}></div>
                         </div>
                         Prejuízo : {dado}
                     </div>
                 </div>
+                <div class={moeda}></div>
                 <div className='monitor'>{recebido<=30 ? monitor[0]:recebido<=60 ? monitor[1]:monitor[2]}</div>
-                <div className='bot'>
-                    <button className='botao' onClick={atacar}> Atacar</button>
-                    <p>Causa 50 de prejuízo ao adversário</p>
+                <div className={moeda =="coin" || animGolpe !='' ? 'none':''}>
+                    <div className='bot'>
+                        <button className='botao' onClick={atacar}> Atacar</button>
+                        <p>Causa 50 de prejuízo ao adversário</p>
+                    </div>
+                    <div className='bot'>
+                        <button className='botao' onClick={curar}> curar</button>
+                        <p>Cura 50 dos seus pontos de vida</p>
+                    </div>
+                    <div className={gen==true || envenenamento == true || contG>0 ?'none':'bot2'}>
+                        <button onClick={()=>{especial(nome)}}  className={ gen==true ||envenenamento == true || contG>0 ?'none':'especial'} >Especial</button>
+                        <p>{texto}</p>
+                    </div>
+                    <div className={rad>0 ?'none':'bot2'}>
+                        <button onClick={()=>{sorte()}}  className={ rad>0 ?'none':'sorte'} >Sorte</button>
+                        <p> Use uma habilidade aleatória. Depois do uso ela ficará indisponivel por 10 turnos</p>
+                    </div>
                 </div>
-               <div className='bot'>
-                    <button className='botao' onClick={curar}> curar</button>
-                    <p>Cura 50 dos seus pontos de vida</p>
-               </div>
-                <div className={gen==true || envenenamento == true || contG>0 ?'none':'bot2'}>
-                    <button onClick={()=>{especial(nome)}}  className={ gen==true ||envenenamento == true || contG>0 ?'none':'especial'} >especial</button>
-                    <p>{texto}</p>
-                </div>
+                
                 
             </div>
             
