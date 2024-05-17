@@ -27,7 +27,7 @@
   flex-direction: row;
   overflow-y: auto; /* Habilita a rolagem horizontal quando necessário */
   white-space: nowrap;
-  padding-left: 880px;
+  padding-left: 920px;
   padding-right:20px ;
 }
 .game{
@@ -299,7 +299,7 @@
   .selecao{
     background: silver;
     max-height: 80%;
-    max-width: 800px;
+    width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -307,7 +307,7 @@
     overflow-y: auto; /* Habilita a rolagem horizontal quando necessário */
     white-space: nowrap;
     padding-left: 0px;
-    padding-top: 2050px;
+    padding-top: 2250px;
     
     margin-right: 0px;
  
