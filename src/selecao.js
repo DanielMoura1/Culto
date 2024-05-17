@@ -225,7 +225,7 @@ function Selecao() {
 
             
         }else if(nome=='kamylly'){
-           
+            setCor('kamyllyEspecial')
             setGen(true)
             setCont(10)
             const numeroAleatorioEntre0e9 = Math.floor(Math.random() * 10) 
