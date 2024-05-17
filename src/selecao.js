@@ -257,7 +257,7 @@ function Selecao() {
         let sorte = Math.floor(Math.random() * 4)
      
         const atks=['luciano','karol','rr','kamylly']
-        alert(sorte)
+       
         if(atks[sorte]==nome){
             if(nome=='luciano'){
                 sorte=sorte+1         
