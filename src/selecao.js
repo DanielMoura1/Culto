@@ -23,10 +23,11 @@ function Selecao() {
     const [imgg,setImgg] =useState('')
     const [moeda,setMoeda] =useState('')
     const [animGolpe,setAnimGolpe] =useState('')
-    const monitor=['recebeu :'+recebido+' de prejuízo. teste1','recebeu:'+recebido+'de prejuízo. teste2','recebeu:'+recebido+'de prejuízo. teste3']
+    const monitor=['Paralisou o adversário por 3 rodadas','Envenenou o adversário por 3 rodadas causando 30 de prejuízo','Jogou uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Ficará 10 rodadas recebendo apenas a metade do prejuizo','']
     const [texto,setTexto] =useState('')
     const ab=['Paralisa o adversário por 3 rodadas','Envenena o adversário por 3 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 10 rodadas recebendo apenas a metade do prejuizo']
-  
+    const [numeroM,setNumeroM] =useState(4)
+
     function escolher(nome,img,tex){
        
         setNome(nome)
@@ -266,6 +267,7 @@ function Selecao() {
             }
         }
         setRad(10)
+        setNumeroM(sorte)
         if(atks[sorte]=='kamylly'){
             setCor('kamyllyEspecial')
         }
@@ -466,7 +468,7 @@ function Selecao() {
                     </div>
                 </div>
                 <div class={moeda}></div>
-                <div className='monitor'>{recebido<=30 ? monitor[0]:recebido<=60 ? monitor[1]:monitor[2]}</div>
+                <div className='monitor'>{monitor[numeroM]}</div>
                 <div className={moeda =="coin" || animGolpe !='' ? 'none':''}>
                     <div className='bot'>
                         <button className='botao' onClick={atacar}> Atacar</button>
