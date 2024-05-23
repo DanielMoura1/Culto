@@ -101,7 +101,7 @@ function Selecao() {
         }
         setTimeout(function() {
             setAnimGolpe('')
-          }, 550);
+          }, 900);
         
     }
     function curar(){
