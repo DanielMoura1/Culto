@@ -23,9 +23,9 @@ function Selecao() {
     const [imgg,setImgg] =useState('')
     const [moeda,setMoeda] =useState('')
     const [animGolpe,setAnimGolpe] =useState('')
-    const monitor=['Paralisou o adversário por 3 rodadas '+ (6-contG)+'/3','Envenenou o adversário por 3 rodadas causando 30 de prejuízo '+(3-contV) +'/3','Jogou uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Ficará 10 rodadas recebendo apenas a metade do prejuizo '+(10-cont)+'/10','']
+    const monitor=['Paralisou o adversário por 3 rodadas '+ (6-contG)+'/3','Envenenou o adversário por 4 rodadas causando 30 de prejuízo '+(3-contV) +'/4','Jogou uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Ficará 11 rodadas recebendo apenas a metade do prejuizo '+(10-cont)+'/11','']
     const [texto,setTexto] =useState('')
-    const ab=['Paralisa o adversário por 3 rodadas','Envenena o adversário por 3 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 10 rodadas recebendo apenas a metade do prejuizo']
+    const ab=['Paralisa o adversário por 3 rodadas','Envenena o adversário por 4 rodadas causando 30 de prejuízo','Joga uma moeda para cima e tem 50% de chance de curar 200 de vida sua ou 50 de vida do adversário','Fica 11 rodadas recebendo apenas a metade do prejuizo']
     const [numeroM,setNumeroM] =useState(4)
 
     function escolher(nome,img,tex){
